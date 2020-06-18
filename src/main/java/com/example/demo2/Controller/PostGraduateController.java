@@ -25,10 +25,11 @@ public class PostGraduateController {
         return modelMap;
     }
     @RequestMapping("/selectId")
-    public Map<String ,Object> selectId(int id){
+    public Map<String ,Object> selectId(int id) {
         Map<String, Object> modelMap = new HashMap<String, Object>();
         List<PostGraduate> postGraduates = postGraduateDao.selectId(id);
         modelMap.put("data", postGraduates);
         return modelMap;
-     }
     }
+
+}
