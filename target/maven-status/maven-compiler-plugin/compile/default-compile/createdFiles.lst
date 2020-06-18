@@ -1,0 +1,15 @@
+com\example\demo2\Entity\Talent.class
+com\example\demo2\Dao\UserDao.class
+com\example\demo2\Dao\OrganizationDao.class
+com\example\demo2\Entity\Patent.class
+com\example\demo2\Entity\Project.class
+com\example\demo2\Controller\ShowDataController.class
+com\example\demo2\Controller\UserController.class
+com\example\demo2\Dao\ExpertDao.class
+com\example\demo2\Dao\PatentDao.class
+com\example\demo2\Entity\Expert.class
+com\example\demo2\Entity\User.class
+com\example\demo2\Dao\TalentDao.class
+com\example\demo2\Entity\Organization.class
+com\example\demo2\Demo2Application.class
+com\example\demo2\Dao\ProjectDao.class
