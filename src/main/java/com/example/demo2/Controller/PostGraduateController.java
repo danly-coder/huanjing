@@ -31,5 +31,4 @@ public class PostGraduateController {
         modelMap.put("data", postGraduates);
         return modelMap;
     }
-
 }

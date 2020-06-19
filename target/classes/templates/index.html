@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 , user-scalable=no">
+    <title>山东建筑大学市政与环境工程学院2020年考研光荣榜</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap-maizi.css"/>
+    <link rel="stylesheet" href="css/animate.css"/>
+</head>
+
+<body>
+<!--home-->
+<section id="home">
+    <div class="lvjing">
+        <div class="container">
+            <div class="row wow fadeInUp">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <img src="images/logored.png" class="img-responsive"/>
+                </div>
+                <div class="col-md-3"></div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!--home-->
+<section id="box" class="col-md-12 col-xs-12 col-sm-12">
+    <div id="box1" class="col-md-12 col-xs-12 col-sm-12">
+        <div id="box2" class="col-md-12 col-xs-12 col-sm-12">
+
+        </div>
+    </div>
+</section>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content modalimg" style="margin-top: 40%">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel" style="color: #fcec41;">详细信息</h4>
+            </div>
+            <div id="modalbody" class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+<script src="js/jquery-3.5.1.min.js"></script>
+<!-- 包括所有已编译的插件 -->
+<script src="js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    $(window).resize(function () {
+        var width = $('#box2').width();
+        $("#box3").height(width / 6);
+
+    });
+    $.ajax({
+        type: "post",
+        url: "http://localhost:8066/postgraduate/selectAll",
+        dataType: 'json', //向后端请求数据的url
+        success: function (data) {
+            console.log(data);
+            for (i = 0; i < data.data.length; i++) {
+                var divcode;
+                divcode = '<img src="images/' + data.data[i].id + '.jpg"  class="img-responsive center-block" width="100%" height="100%" /><p class="boxfont">' + data.data[i].name + '</p>';
+                $("#box2").append('<div class="box3  col-md-2 col-xs-2 col-sm-2" data-toggle="modal" data-target="#myModal"' + 'id = ' + data.data[i].id + '>' + divcode + '</div>');
+            }
+        }
+    });
+    $("#box2").delegate(".box3", "click", function (e) {
+        $("#modalbody").empty();
+        var id = $(this).attr('id');
+        console.log("点击事件");
+        console.log(id);
+        $.ajax({
+            type: "post",
+            url: "http://localhost:8066/postgraduate/selectId?id=" + id,
+            dataType: 'json', //向后端请求数据的url
+            success: function (data) {
+                console.log(data);
+                var divcode;
+                divcode = '<img src="images/' + id + '.jpg" class="img-responsive center-block col-md-5 col-xs-5 col-sm-5 modalimages"/><div class="modaltext modalfont"><p>姓名：'+ data.data[0].name +'</p><p>班级：'+ data.data[0].banji +'</p><p>考研院校：'+ data.data[0].admitSchool +'</p><p>简介：'+ data.data[0].motto +'</p></div>';
+                $("#modalbody").append('<div>' + divcode + '</div>');
+            }
+        });
+    });
+    $(".close").click(function (e) {
+        $("#modalbody").empty();
+
+    });
+</script>
+
+</body>
+
+</html>
