@@ -8,7 +8,7 @@ public class ShowPostGraduateController {
 
      @RequestMapping("/index")
      public  String  displayPostGraduate(){
-        return "display";
+        return "index";
      }
 
 }
