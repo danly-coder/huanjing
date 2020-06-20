@@ -8,7 +8,6 @@
     <title>山东建筑大学市政与环境工程学院2020年考研光荣榜</title>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/bootstrap-maizi.css"/>
-    <link rel="stylesheet" href="css/animate.css"/>
 </head>
 
 <body>
@@ -37,15 +36,15 @@
 </section>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content modalimg" style="margin-top: 40%">
+        <div id="modalcontent" class="modal-content modalimg col-md-3 col-xs-3 col-sm-3" style="margin-top: 17%">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title" id="myModalLabel" style="color: #fcec41;">详细信息</h4>
             </div>
-            <div id="modalbody" class="modal-body">
+            <div id="modalbody" class="modal-body" style="height: 300px;">
 
             </div>
-            <div class="modal-footer">
+            <div id="foot" class="modal-footer modalfooter" >
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
             </div>
         </div>
@@ -61,7 +60,10 @@
     $(window).resize(function () {
         var width = $('#box2').width();
         $("#box3").height(width / 6);
-
+        var widths = $('.modal-footer').width();
+        var heights = $('.modal-footer').height();
+        console.log(widths);
+        console.log(heights);
     });
     $.ajax({
         type: "post",
@@ -79,7 +81,6 @@
     $("#box2").delegate(".box3", "click", function (e) {
         $("#modalbody").empty();
         var id = $(this).attr('id');
-        console.log("点击事件");
         console.log(id);
         $.ajax({
             type: "post",
@@ -88,10 +89,15 @@
             success: function (data) {
                 console.log(data);
                 var divcode;
-                divcode = '<img src="images/' + id + '.jpg" class="img-responsive center-block col-md-5 col-xs-5 col-sm-5 modalimages"/><div class="modaltext modalfont"><p>姓名：'+ data.data[0].name +'</p><p>班级：'+ data.data[0].banji +'</p><p>考研院校：'+ data.data[0].admitSchool +'</p><p>简介：'+ data.data[0].motto +'</p></div>';
+            /*<div class="col-md-4 col-xs-4 col-sm-4"></div>*/
+                /*divcode = '<div><img src="images/' + id + '.jpg" class="img-responsive center-block col-md-4 col-xs-4 col-sm-4 modalimages"/></div><div class="modaltext modalfont col-md-4 col-xs-4 col-sm-4"><p>姓名：'+ data.data[0].name +'</p><p>班级：'+ data.data[0].banji +'</p><p>考研院校：'+ data.data[0].admitSchool +'</p><p>简介：'+ data.data[0].motto +'</p></div>';*/
+                divcode = '<div><img src="images/' + id + '.jpg" class="img-responsive center-block col-md-4 col-xs-4 col-sm-4 modalimages"/></div><div class="modaltext modalfont col-md-8 col-xs-8 col-sm-8"><span></span><span>姓名：'+ data.data[0].name +'</span><br><span>班级：'+ data.data[0].banji +'</span><br><span>考研院校：'+ data.data[0].admitSchool +'</span><br><span>简介：'+ data.data[0].motto +'</span></div>';
                 $("#modalbody").append('<div>' + divcode + '</div>');
             }
         });
+        /*var heights = $('#modalcontent').height();
+        console.log(heights);*/
+        /*$("#modalbody").height(heights);*/
     });
     $(".close").click(function (e) {
         $("#modalbody").empty();
