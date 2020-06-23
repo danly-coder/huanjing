@@ -1,16 +1,31 @@
 body {
     font-family: 'Microsoft YaHei', sans-serif;
+    background-size: auto 92% ;
+    background: url("../images/boxbg1.png") no-repeat fixed 4% 0;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    width:100%;
+    overflow: auto;
+
 }
+
 p {
     font-size: 0.5rem;
 
 }
 
-#home {
+.marpadd {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/*#home {
     background: url("../images/bg.png");
     background-position: center 0;
     background-repeat: no-repeat;
-    /*background-attachment: fixed;*/
+    !*background-attachment: fixed;*!
     background-size: auto;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -18,7 +33,7 @@ p {
     -ms-background-size: cover;
     overflow: auto;
     width: 100%;
-}
+}*/
 
 
 .lvjing {
@@ -44,21 +59,21 @@ p {
 }
 
 #box {
-    background-color: #fcec41;
+    background-color: rgba(0, 0, 0, 0);
     width: 100%;
     height: auto;
-    border: 4vw solid #f10c13;
+    border: 4vw solid rgba(0, 0, 0, 0);
     padding: 0;
 }
 
 #box1 {
     width: 100%;
     height: auto;
-    border: 2vw solid #d55c13;
+    border: 2vw solid rgba(0, 0, 0, 0);
 }
 
 #box2 {
-    background-color: #fcec41;
+    background-color: rgba(0, 0, 0, 0);
     width: 100%;
     height: auto;
 
@@ -116,11 +131,50 @@ p {
     bottom: 2%;
 }
 
+.juanzhouleft {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+    height: 100%;
+    width: 5%
+}
+
+.juanzhouright {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+    height: 100%;
+    width: 5%
+}
+
 @media (min-width: 300px) {
     p {
-        font-size: 0.1rem;
-        -webkit-transform:scale(0.5);
-        margin: -1px -3px ;
+        font-size: 0.2rem;
+        -webkit-transform: scale(0.7);
+        margin: 1px -3px;
+    }
+    .juanzhouleft {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 3;
+        height: 100%;
+        width: 7%
+    }
+
+    .juanzhouright {
+        position: fixed;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 3;
+        height: 100%;
+        width: 9%
     }
 }
 
@@ -128,18 +182,75 @@ p {
     p {
         font-size: 0.2rem;
     }
+    .juanzhouleft {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 3;
+        height: 100%;
+        width: 5%
+    }
+
+    .juanzhouright {
+        position: fixed;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 3;
+        height: 100%;
+        width: 5%
+    }
 }
 
 @media (min-width: 768px) {
     p {
         font-size: 1.2rem;
     }
+    .juanzhouleft {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 3;
+        height: 100%;
+        width: 5%
+    }
+
+    .juanzhouright {
+        position: fixed;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 3;
+        height: 100%;
+        width: 5%
+    }
 }
 
 @media (min-width: 992px) {
     p {
-        font-size:1.3rem;
+        font-size: 1.3rem;
         margin: 0;
+    }
+    .juanzhouleft {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 3;
+        height: 100%;
+        width: 5%
+    }
+
+    .juanzhouright {
+        position: fixed;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 3;
+        height: 100%;
+        width: 5%
     }
 }
 
@@ -147,24 +258,46 @@ p {
     html {
         font-size: 1.5rem;
     }
+    .juanzhouleft {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 3;
+        height: 100%;
+        width: 5%
+    }
+
+    .juanzhouright {
+        position: fixed;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 3;
+        height: 100%;
+        width: 5%
+    }
 }
 
 /* 设置滚动条的样式 */
 ::-webkit-scrollbar {
-    width:12px;
+    width: 12px;
 }
+
 /* 滚动槽 */
 ::-webkit-scrollbar-track {
     /*-webkit-box-shadow:inset006pxrgba(0,0,0,0.5);*/
-    border-radius:10px;
+    border-radius: 10px;
 }
+
 /* 滚动条滑块 */
 ::-webkit-scrollbar-thumb {
-    border-radius:10px;
-    background:rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
     /*-webkit-box-shadow:inset006pxrgba(0,0,0,0.5);*/
 }
+
 ::-webkit-scrollbar-thumb:window-inactive {
-    background:rgba(255,0,0,0.4);
+    background: rgba(255, 0, 0, 0.4);
 }
 

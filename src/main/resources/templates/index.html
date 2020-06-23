@@ -11,23 +11,20 @@
 </head>
 
 <body>
+<div>
+    <img src="images/leftjz.png"  class="img-responsive juanzhouleft" >
+    <img src="images/rightjz.png"  class="img-responsive juanzhouright" >
+</div>
 <!--home-->
 <section id="home">
-    <div class="lvjing">
-        <div class="container">
-            <div class="row wow fadeInUp">
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
-                    <img src="images/logored.png" class="img-responsive"/>
-                </div>
-                <div class="col-md-3"></div>
-
-            </div>
+    <div class="lvjing ">
+        <div class="col-md-12" style="width: 100%;height: 100%; margin:0; padding:0">
+            <img src="images/bg.png" class="img-responsive" style="width: 100%;height: 100%; margin:0; padding:0 5%"/>
         </div>
     </div>
 </section>
 <!--home-->
-<section id="box" class="col-md-12 col-xs-12 col-sm-12">
+<section id="box" class="col-md-12 col-xs-12 col-sm-12" >
     <div id="box1" class="col-md-12 col-xs-12 col-sm-12">
         <div id="box2" class="col-md-12 col-xs-12 col-sm-12">
 
@@ -44,7 +41,7 @@
             <div id="modalbody" class="modal-body" style="height:300px;overflow:auto;">
 
             </div>
-            <div id="foot" class="modal-footer modalfooter" >
+            <div id="foot" class="modal-footer modalfooter">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
             </div>
         </div>
@@ -86,9 +83,9 @@
             success: function (data) {
                 console.log(data);
                 var divcode;
-            /*<div class="col-md-4 col-xs-4 col-sm-4"></div>*/
+                /*<div class="col-md-4 col-xs-4 col-sm-4"></div>*/
                 /*divcode = '<div><img src="images/' + id + '.jpg" class="img-responsive center-block col-md-4 col-xs-4 col-sm-4 modalimages"/></div><div class="modaltext modalfont col-md-4 col-xs-4 col-sm-4"><p>姓名：'+ data.data[0].name +'</p><p>班级：'+ data.data[0].banji +'</p><p>考研院校：'+ data.data[0].admitSchool +'</p><p>简介：'+ data.data[0].motto +'</p></div>';*/
-                divcode = '<div><img src="images/' + id + '.jpg" class="img-responsive center-block col-md-4 col-xs-4 col-sm-4 modalimages"/></div><div class="modaltext modalfont col-md-8 col-xs-8 col-sm-8"><span></span><span>姓名：'+ data.data[0].name +'</span><br><span>班级：'+ data.data[0].banji +'</span><br><span>考研院校：'+ data.data[0].admitSchool +'</span><br><span>简介：'+ data.data[0].motto +'</span></div>';
+                divcode = '<div><img src="images/' + id + '.jpg" class="img-responsive center-block col-md-4 col-xs-4 col-sm-4 modalimages"/></div><div class="modaltext modalfont col-md-8 col-xs-8 col-sm-8"><span></span><span>姓名：' + data.data[0].name + '</span><br><span>班级：' + data.data[0].banji + '</span><br><span>考研院校：' + data.data[0].admitSchool + '</span><br><span>寄语：' + data.data[0].motto + '</span></div>';
                 $("#modalbody").append('<div class="col-md-12 col-xs-12 col-sm-12">' + divcode + '</div>');
             }
         });
@@ -104,6 +101,7 @@
         $("#modalbody").empty();
 
     });
+
 </script>
 
 </body>
